@@ -1,4 +1,12 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
+<?php 
+$cookie_name = "Gagan";
+$cookie_value = 12345;
+setcookie($cookie_name, $cookie_value, time() + 60, "/")
+?>
 <html>
 <head>
 	<title>Learning....</title>
@@ -277,6 +285,28 @@ echo "<br>";
 echo $web;
 echo "<br>";
 echo $gender;
+?>
+
+
+<h1 id="main_heading">PHP Advanced</h1>
+<h2>Cookies and Session</h2>
+
+<a href="session_test.php" target="_blank">Session Test page</a><br>
+<?php 
+$_SESSION["Name"] = "Gagan";
+$_SESSION["Age"] = 24;
+?>
+
+<br>
+<br>
+<p>Cookie time I set is one minute</p>
+<?php 
+if (!isset($_COOKIE[$cookie_name])) {
+	echo "Cookie named " . $cookie_name . " is not set.";
+} else {
+	echo "Cookie named " . $cookie_name . " is set.<br>";
+	echo "Value is: " . $_COOKIE[$cookie_name];
+}
 ?>
 
 
